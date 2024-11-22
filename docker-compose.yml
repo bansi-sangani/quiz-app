@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/usr/src/app   # Mount the app directory to the container to sync code changes
+    environment:
+      - NODE_ENV=production
+    command: ["npm", "start"]  # Ensure it runs the start command
